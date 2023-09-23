@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of games</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="list-container">
+        {% if games %}
+            <ul>
+            {% for elem in games %}
+                <!-- Here, you're creating a link to the game room page for each game ID -->
+                <li><a href="{% url 'game_start' elem.id %}">Game {{ elem.id }}. Created {{ elem.date_created }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <h3>no games</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

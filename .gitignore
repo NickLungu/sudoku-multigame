@@ -1,0 +1,5 @@
+*__init,py__
+db*
+.env
+*__pycache__
+*migrations
